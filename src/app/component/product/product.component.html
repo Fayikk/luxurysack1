@@ -1,0 +1,20 @@
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th>Ürün Id</th>
+      <th>Ürün Adı</th>
+      <th>Fiyat</th>
+      <th>Beden</th>
+      <th>Açıklama</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.productId }}</td>
+      <td>{{ product.productName }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.size }}</td>
+      <td>{{ product.description }}</td>
+    </tr>
+  </tbody>
+</table>

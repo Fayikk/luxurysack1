@@ -1,0 +1,16 @@
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Marka</th>
+      <th>Ürün Id'si</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of brands">
+      <td>{{ brand.brandId }}</td>
+      <td>{{ brand.brands }}</td>
+      <td>{{ brand.productId }}</td>
+    </tr>
+  </tbody>
+</table>
