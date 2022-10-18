@@ -1,16 +1,23 @@
+
+
+<div class="mb-3">
+  <label for="filterText" class="form-label">Marka İsmi</label>
+  <input type="text" [(ngModel)]="filtertext" class="form-control" id="filterText" placeholder="Hangi Markayı Arıyosunuz?">
+</div>
+
 <table class="table table-success table-striped">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Marka</th>
-      <th>Ürün Id'si</th>
+      <th>Marka Id</th>
+      <th>Markalar</th>
+      <th>Kategori Id</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let brand of brands">
+    <tr *ngFor="let brand of brands  | filterpipe1:filtertext ">
       <td>{{ brand.brandId }}</td>
       <td>{{ brand.brands }}</td>
-      <td>{{ brand.productId }}</td>
+      <td>{{ brand.categoryId }}</td>
     </tr>
   </tbody>
 </table>

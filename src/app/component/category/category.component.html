@@ -2,7 +2,7 @@
     <li  [class]="getAllCategoryClass()"  routerLink="/brands">Tüm Ürünler</li>
     <li
       (click)="setCurrentCategory(category)"
-      routerLink="/brands/category/{{category.brandId}}"
+      routerLink="/categories/brand/{{category.categoryId}}"
       
       *ngFor="let category of categories"
       [class]="getCurrentCategoryClass(category)"
@@ -11,5 +11,5 @@
     </li>
     
   </ul>
-  <h2 *ngIf="currentCategory">{{ currentCategory.goods }} seçildi</h2>
+  <h2 *ngIf="currentCategory">{{ currentCategory.goods }} </h2>
    

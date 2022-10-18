@@ -10,6 +10,8 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
+  currentBrand : Brand;
+  filtertext="";
   constructor(
     private brandService: BrandService,
     private activatedRoute: ActivatedRoute
@@ -17,8 +19,8 @@ export class BrandComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
-      if(params["brandId"]){
-        this.getBrandsByCategory(params["brandId"])
+      if(params["categoryId"]){
+        this.getBrandsByCategory(params["categoryId"])
       }else{
         this.getBrands()
       }
@@ -31,9 +33,34 @@ export class BrandComponent implements OnInit {
     });
   }
 
-  getBrandsByCategory(brandId: number) {
-    this.brandService.getBrandsByCategory(brandId).subscribe(response=>{
+  getBrandsByCategory(categoryId: number) {
+    this.brandService.getBrandsByCategory(categoryId).subscribe(response=>{
       this.brands = response.data
     });
+  }
+  
+  setCurrentBrand(brand:Brand){
+    this.currentBrand=brand;
+  }
+
+  getCurrentBrandClass(brand:Brand){
+    
+    if(brand == this.currentBrand){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+
+    }
+  }
+
+  getAllBrandClass(){
+    if (!this.currentBrand) {
+      return "list-group-item active"
+      
+    }else{
+      return "list-group-item"
+
+    }
   }
 }

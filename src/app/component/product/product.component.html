@@ -1,20 +1,36 @@
+
+<div class="mb-3">
+  <label for="filterText" class="form-label">Ürün İsmi Giriniz</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="name@example.com">
+</div>
+
 <table class="table table-success table-striped">
   <thead>
     <tr>
-      <th>Ürün Id</th>
+      <th>Marka ID'si</th>
       <th>Ürün Adı</th>
       <th>Fiyat</th>
-      <th>Beden</th>
+      <th>Kdv'li Fiyat</th>
+     
       <th>Açıklama</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{ product.productId }}</td>
-      <td>{{ product.productName }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.size }}</td>
+    <tr *ngFor="let product of products | filterpipe:filterText  ">
+     
+      <td>{{ product.brandId  }}</td>
+      <td>{{ product.productName  | uppercase  }}</td>
+      <td>{{ product.price  |currency }}</td>
+      <td>{{ product.price | vatAdded:18 | currency}}</td>
+     
       <td>{{ product.description }}</td>
+      <td>
+        <button (click)="addToCart(product)" type="button" class="btn btn-warning">Sepete Ekle</button>
+  
+    </td>
     </tr>
   </tbody>
 </table>
+
+
+
