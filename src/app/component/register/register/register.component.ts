@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
       lastName: ['', Validators.required],
       
       //html'imizde hangi alanlar map edilecek ve o alandaki kurallar nelerdir .
-      //Bu alan onunla ilgilenmektedir.
+      //Bu alan onunla i lgilenmektedir.
     });
   }
 

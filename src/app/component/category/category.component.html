@@ -1,15 +1,13 @@
-<ul class="list-group">
-    <li  [class]="getAllCategoryClass()"  routerLink="/brands">Tüm Ürünler</li>
-    <li
-      (click)="setCurrentCategory(category)"
-      routerLink="/categories/brand/{{category.categoryId}}"
-      
-      *ngFor="let category of categories"
-      [class]="getCurrentCategoryClass(category)"
-    >
-      {{ category.goods }}
-    </li>
+
+  <div class="list-group">
+    <a  [class]="getAllCategoryClass()"  routerLink="/brands">
+      Tüm Ürünler
+    </a>
+    <a (click)="setCurrentCategory(category)"
+    routerLink="/categories/brand/{{category.categoryId}}"
     
-  </ul>
+    *ngFor="let category of categories"
+    [class]="getCurrentCategoryClass(category)"> {{ category.goods }}</a>
+
+  </div>
   <h2 *ngIf="currentCategory">{{ currentCategory.goods }} </h2>
-   
