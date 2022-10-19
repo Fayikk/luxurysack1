@@ -1,0 +1,79 @@
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Ürün Ekle</h5></div>
+        <div class="card-body">
+          <form [formGroup]="registerForm">
+
+            <div class="mb-3">
+              <label for="email">E Mail</label>
+              <div class="form-group">
+                <input
+                  type="string"
+                  id="email"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="mail"
+                />
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="password">Parola</label>
+                <div class="form-group">
+                  <input
+                    type="string"
+                    id="password"
+                    formControlName="password"
+                    class="form-control"
+                    placeholder="Parola"
+                  />
+                </div>
+            </div>
+              
+            
+          
+            <div class="mb-3">
+              <label for="firstName">İsim</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="firstName"
+                  formControlName="firstName"
+                  class="form-control"
+                  placeholder="İsim"
+                />
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="lastName">Soyisim</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="lastName"
+                  formControlName="lastName"
+                  class="form-control"
+                  placeholder="Soyisim"
+                />
+              </div>
+            </div>
+            
+            
+
+              
+            
+  
+          </form>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-success" (click)="add()">Ekle</button>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  

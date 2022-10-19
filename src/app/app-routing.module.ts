@@ -6,6 +6,7 @@ import { LoginComponent } from './component/login/login.component';
 import { ProductAddComponent } from './component/product-add/product-add.component';
 
 import { ProductComponent } from './component/product/product.component';
+import { RegisterComponent } from './component/register/register/register.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [//yönelendirmeleri bu class içerisinde gerçekleştirmekteyiz.
@@ -17,6 +18,7 @@ const routes: Routes = [//yönelendirmeleri bu class içerisinde gerçekleştirm
   {path:"products/brand/category/:productId",component:ProductComponent},
   {path:"products",component:ProductComponent},
   {path:"login",component:LoginComponent},
+  {path:"register",component:RegisterComponent},
   {path:"products/add",component:ProductAddComponent,canActivate:[LoginGuard]}
 
 

@@ -20,6 +20,7 @@ import { ProductAddComponent } from './component/product-add/product-add.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './component/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './component/register/register/register.component';
 
 @NgModule({ 
   declarations: [
@@ -34,6 +35,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CartsummaryComponent,
     ProductAddComponent,
     LoginComponent,
+    RegisterComponent,
 
     // Observable
   ],
